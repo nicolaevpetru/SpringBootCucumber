@@ -14,7 +14,8 @@
 
         <!-- plugins properties start-->
         <maven-surefire.version>3.0.0-M5</maven-surefire.version>
-
+        <allure-maven.version>2.10.0</allure-maven.version>
+        <tidy-plugin.version>1.1.0</tidy-plugin.version>
         <!-- plugins properties end-->
 
         <!-- dependencies properties start-->
@@ -25,6 +26,8 @@
         <cucumber.version>7.1.0</cucumber.version>
         <webdrivermanager.version>5.0.3</webdrivermanager.version>
         <lombok.veriosn>1.18.22</lombok.veriosn>
+        <rest-assured.version>4.4.0</rest-assured.version>
+        <allure-report.version>2.17.2</allure-report.version>
         <!-- dependencies properties end-->
     </properties>
 
@@ -48,7 +51,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <version>${sprint-boot.veriosn}</version>
-            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
@@ -95,6 +97,22 @@
             <artifactId>lombok</artifactId>
             <version>${lombok.veriosn}</version>
         </dependency>
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>rest-assured</artifactId>
+            <version>${rest-assured.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>json-path</artifactId>
+            <version>${rest-assured.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-cucumber7-jvm</artifactId>
+            <version>${allure-report.version}</version>
+        </dependency>
+
     </dependencies>
 
     <build>
@@ -109,6 +127,16 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${maven-surefire.version}</version>
             </plugin>
+            <plugin>
+                <groupId>io.qameta.allure</groupId>
+                <artifactId>allure-maven</artifactId>
+                <version>${allure-maven.version}</version>
+            </plugin>
+<!--            <plugin>-->
+<!--                <groupId>org.codehaus.mojo</groupId>-->
+<!--                <artifactId>tidy-maven-plugin</artifactId>-->
+<!--                <version>${tidy-plugin.version}</version>-->
+<!--            </plugin>-->
         </plugins>
     </build>
 
